@@ -1,11 +1,27 @@
 <h1><%= @events.size %> Events</h1>
 
-<ul>
-  <% @events.each do |e| %>
-      <li>
-        <strong><%= e.name %></strong>
-        in <%= e.location %>:
-        <%= number_to_currency(e.price) %>
-      </li>
-  <% end %>
-</ul>
+
+<% @events.each do |e| %>
+  <article>
+    <header>
+      <h2><%= e.name %></h2>
+    </header>
+    <p>
+      <%= e.description %>
+    </p>
+    <table>
+      <tr>
+        <th>When:</th>
+        <td><%= e.starts_at %></td>
+      </tr>
+      <tr>
+        <th>Where:</th>
+        <td><%= e.location %></td>
+      </tr>
+      <tr>
+        <th>Price:</th>
+        <td><%= number_to_currency(e.price) %></td>
+      </tr>
+    </table>
+  </article>
+<% end %>
