@@ -4,7 +4,7 @@
 <% @events.each do |e| %>
   <article>
     <header>
-      <h2><%= e.name %></h2>
+      <h2><%= link_to e.name, e %></h2>
     </header>
     <p>
       <%= truncate(e.description, length: 35, seperator: ' ') %>
